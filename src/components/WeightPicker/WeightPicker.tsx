@@ -12,11 +12,15 @@ import styles from './styles';
 
 interface WeightPickerProps {
   data: Array<any>;
+  onSnapToItem: (value: number) => void;
 }
 
 type ItemProps = {item: any; index: number};
 
-const WeightPicker: FunctionComponent<WeightPickerProps> = ({data}) => {
+const WeightPicker: FunctionComponent<WeightPickerProps> = ({
+  data,
+  onSnapToItem,
+}) => {
   const [type, setType] = useState('kilo');
   const [values, setValues] = useState<Array<any>>([]);
 
@@ -46,20 +50,6 @@ const WeightPicker: FunctionComponent<WeightPickerProps> = ({data}) => {
     </View>
   );
 
-  // const handleToggleType = useCallback(() => {
-  //   if (type === 'pound') {
-  //     // 2.20462
-  //     const newData = data.map((value) => {
-  //       const newValue = value * 2.2;
-  //       return {
-  //         label: newValue,
-  //         value: newValue,
-  //       };
-  //     });
-  //     setValues(newData);
-  //   }
-  // }, [data, type]);
-
   return (
     <View style={styles.container}>
       <View style={styles.controlContainer}>
@@ -85,7 +75,7 @@ const WeightPicker: FunctionComponent<WeightPickerProps> = ({data}) => {
         inactiveSlideOpacity={0.4}
         apparitionDelay={10}
         slideStyle={styles.carouselItemContainer}
-        onSnapToItem={(item) => console.log(data[item])}
+        onSnapToItem={(item) => onSnapToItem(data[item].value)}
       />
 
       <View style={styles.triangle} />

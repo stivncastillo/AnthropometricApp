@@ -5,6 +5,9 @@ import Label from './Label/Label';
 import WeightPicker from './WeightPicker/WeightPicker';
 import HeightPicker from './HeightPicker/HeightPicker';
 import ControlButton from './ControlButton/ControlButton';
+import HeaderButton from './HeaderButton/HeaderButton';
+import NumberPicker from './NumberPicker/NumberPicker';
+import AppCarousel from './AppCarousel/AppCarousel';
 
 export {
   Container,
@@ -14,4 +17,7 @@ export {
   WeightPicker,
   HeightPicker,
   ControlButton,
+  HeaderButton,
+  NumberPicker,
+  AppCarousel,
 };

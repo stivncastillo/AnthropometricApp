@@ -1,0 +1,15 @@
+export const SET_GENDER = 'SET_GENDER';
+export const SET_WEIGHT = 'SET_WEIGHT';
+export const SET_TYPE_WEIGHT = 'SET_TYPE_WEIGHT';
+export const TOGGLE_WEIGHT_TYPE = 'TOGGLE_WEIGHT_TYPE';
+export const SET_HEIGHT = 'SET_HEIGHT';
+export const SET_TYPE_HEIGHT = 'SET_TYPE_HEIGHT';
+export const TOGGLE_HEIGHT_TYPE = 'TOGGLE_HEIGHT_TYPE';
+export const SET_HAIR_COLOR = 'SET_HAIR_COLOR';
+export const SET_EYE_COLOR = 'SET_EYE_COLOR';
+export const SET_SKIN_COLOR = 'SET_SKIN_COLOR';
+export const SET_TOP_SIZE = 'SET_TOP_SIZE';
+export const SET_BOTTOM_SIZE = 'SET_BOTTOM_SIZE';
+export const SET_SHOES_SIZE = 'SET_SHOES_SIZE';
+export const SET_TYPE_BODY = 'SET_TYPE_BODY';
+export const SET_STYLE = 'SET_STYLE';
