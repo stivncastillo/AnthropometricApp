@@ -32,6 +32,8 @@ const WeightState = (props: {children: ReactNode}) => {
         });
 
         setToggleWeight(newList);
+      } else {
+        setToggleWeight(initialState.weightList);
       }
 
       dispatch({

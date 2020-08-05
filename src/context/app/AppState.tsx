@@ -2,7 +2,7 @@ import React, {useReducer, ReactNode} from 'react';
 import AppContext from './appContext';
 import AppReducer from './AppReducer';
 
-import {SET_GENDER, SET_WEIGHT} from '../types';
+import {SET_GENDER, SET_WEIGHT, SET_HEIGHT} from '../types';
 import {State} from './types/reducer';
 
 const AppState = (props: {children: ReactNode}) => {
@@ -37,13 +37,22 @@ const AppState = (props: {children: ReactNode}) => {
     });
   };
 
+  const setHeight = (height: number): void => {
+    dispatch({
+      type: SET_HEIGHT,
+      height,
+    });
+  };
+
   return (
     <AppContext.Provider
       value={{
         gender: state.gender,
         weight: state.weight,
+        height: state.height,
         setGender,
         setWeight,
+        setHeight,
       }}>
       {props.children}
     </AppContext.Provider>

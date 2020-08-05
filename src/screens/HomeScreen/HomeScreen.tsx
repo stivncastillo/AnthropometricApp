@@ -12,30 +12,18 @@ import {
 
 import AppContext from '../../context/app/appContext';
 import WeightContext from '../../context/weight/weightContext';
-
-// const weightList = Array.from({length: 100}, (x, i) => i + 30).map((item) => ({
-//   value: item,
-//   label: item,
-// }));
-
-// const heightList = Array.from({length: 100}, (x, i) => i + 100).map((item) => ({
-//   value: item,
-//   label: item,
-// }));
+import HeightContext from '../../context/height/heightContext';
 
 export interface IHomeProps extends IScreenProps {}
 
 const Home: React.FC<IHomeProps> = ({navigation}) => {
   const appContext = useContext(AppContext);
   const weightContext = useContext(WeightContext);
-  const {gender, setGender} = appContext;
-  const {setWeight, weight} = appContext;
-  const {
-    typeWeight,
-    setTypeWeight,
-    weightList,
-    setToggleWeight,
-  } = weightContext;
+  const heightContext = useContext(HeightContext);
+
+  const {gender, setGender, setWeight, weight, height, setHeight} = appContext;
+  const {typeWeight, setTypeWeight, weightList} = weightContext;
+  const {typeHeight, setTypeHeight, heightList} = heightContext;
 
   const handleGenderChange = useCallback(
     (value: string) => {
@@ -56,6 +44,20 @@ const Home: React.FC<IHomeProps> = ({navigation}) => {
       setTypeWeight(value);
     },
     [typeWeight, setTypeWeight],
+  );
+
+  const handleHeightChange = useCallback(
+    (value: number) => {
+      setHeight(value);
+    },
+    [setHeight],
+  );
+
+  const handleTypeHeightChange = useCallback(
+    (value: number) => {
+      setTypeHeight(value);
+    },
+    [typeHeight, setTypeHeight],
   );
 
   return (
@@ -82,16 +84,27 @@ const Home: React.FC<IHomeProps> = ({navigation}) => {
           </ControlButton>
         </NumberPicker.Header>
 
-        <AppCarousel data={weightList} />
+        <AppCarousel data={weightList} onSnapToItem={handleWeightChange} />
       </NumberPicker>
-
-      {/* <Label>Peso {`${weight} Kilos`}</Label>
-
-      <WeightPicker data={weightList} onSnapToItem={handleWeightChange} />
 
       <Label>Estatura</Label>
 
-      <HeightPicker data={heightList} /> */}
+      <NumberPicker>
+        <NumberPicker.Header>
+          <ControlButton
+            onPress={() => handleTypeHeightChange('centimeters')}
+            active={typeHeight === 'centimeters'}>
+            Centímetros
+          </ControlButton>
+          <ControlButton
+            onPress={() => handleTypeHeightChange('feets')}
+            active={typeHeight === 'feets'}>
+            Pies
+          </ControlButton>
+        </NumberPicker.Header>
+
+        <AppCarousel data={heightList} onSnapToItem={handleHeightChange} />
+      </NumberPicker>
     </Container>
   );
 };

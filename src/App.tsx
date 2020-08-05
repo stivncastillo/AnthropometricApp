@@ -5,13 +5,16 @@ import Navigation from './config/navigation';
 
 import AppState from './context/app/AppState';
 import WeightState from './context/weight/WeightState';
+import HeightState from './context/height/HeightState';
 
 const App: React.FC = () => {
   return (
     <AppState>
       <WeightState>
-        <StatusBar barStyle="dark-content" />
-        <Navigation />
+        <HeightState>
+          <StatusBar barStyle="dark-content" />
+          <Navigation />
+        </HeightState>
       </WeightState>
     </AppState>
   );

@@ -11,7 +11,7 @@ import {ControlButton} from '..';
 import styles from './styles';
 
 interface WeightPickerProps {
-  data: Array<any>;
+  data: Array<any> | [];
   onSnapToItem: (value: number) => void;
 }
 

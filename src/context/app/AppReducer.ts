@@ -1,4 +1,10 @@
-import {SET_GENDER, SET_WEIGHT, SET_TYPE_WEIGHT} from '../types';
+import {
+  SET_GENDER,
+  SET_WEIGHT,
+  SET_TYPE_WEIGHT,
+  SET_HEIGHT,
+  SET_TYPE_HEIGHT,
+} from '../types';
 import {IUserData} from 'src/types/app';
 
 interface IUserDataAction extends IUserData {
@@ -21,6 +27,16 @@ function AppReducer(state: IUserData, action: IUserDataAction) {
       return {
         ...state,
         typeWeight: action.typeWeight,
+      };
+    case SET_HEIGHT:
+      return {
+        ...state,
+        height: action.height,
+      };
+    case SET_TYPE_HEIGHT:
+      return {
+        ...state,
+        typeHeight: action.typeHeight,
       };
     default:
       return state;
