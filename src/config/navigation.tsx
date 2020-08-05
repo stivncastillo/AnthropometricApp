@@ -10,6 +10,11 @@ import ResumeScreen from '../screens/ResumeScreen/ResumeScreen';
 import {HeaderButton} from '../components';
 
 const MainStack = createStackNavigator();
+const buttonHeader = (navigation, screen: string) => {
+  return (
+    <HeaderButton onPress={() => navigation.push(screen)} title="Siguiente" />
+  );
+};
 
 const MainStackScreen = () => {
   return (
@@ -21,12 +26,7 @@ const MainStackScreen = () => {
           navigation,
         }): {title: string; headerRight: () => React.ReactNode} => ({
           title: 'Estudio',
-          headerRight: () => (
-            <HeaderButton
-              onPress={() => navigation.push('Color')}
-              title="Siguiente"
-            />
-          ),
+          headerRight: () => buttonHeader(navigation, 'Color'),
         })}
       />
       <MainStack.Screen
@@ -36,12 +36,7 @@ const MainStackScreen = () => {
           navigation,
         }): {title: string; headerRight: () => React.ReactNode} => ({
           title: 'Estudio',
-          headerRight: () => (
-            <HeaderButton
-              onPress={() => navigation.push('Size')}
-              title="Siguiente"
-            />
-          ),
+          headerRight: () => buttonHeader(navigation, 'Size'),
         })}
       />
       <MainStack.Screen
@@ -51,12 +46,7 @@ const MainStackScreen = () => {
           navigation,
         }): {title: string; headerRight: () => React.ReactNode} => ({
           title: 'Estudio',
-          headerRight: () => (
-            <HeaderButton
-              onPress={() => navigation.push('BodyType')}
-              title="Siguiente"
-            />
-          ),
+          headerRight: () => buttonHeader(navigation, 'BodyType'),
         })}
       />
       <MainStack.Screen
@@ -66,12 +56,7 @@ const MainStackScreen = () => {
           navigation,
         }): {title: string; headerRight: () => React.ReactNode} => ({
           title: 'Estudio',
-          headerRight: () => (
-            <HeaderButton
-              onPress={() => navigation.push('Resume')}
-              title="Siguiente"
-            />
-          ),
+          headerRight: () => buttonHeader(navigation, 'Resume'),
         })}
       />
       <MainStack.Screen name="Resume" component={ResumeScreen} />

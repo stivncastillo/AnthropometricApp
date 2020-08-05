@@ -32,3 +32,14 @@ export interface IHeight {
   setTypeHeight?: (value: string) => void;
   setToggleHeight?: (value: Array<any>) => void;
 }
+
+export interface INavigation {
+  currentStep?: number | 1;
+  lastStep?: number | 0;
+  nextStep?: number | 0;
+  totalSteps?: number | 5;
+  setCurrentStep?: (value: number) => void;
+  setLastStep?: (value: number) => void;
+  setNextStep?: (value: number) => void;
+  setTotalStep?: (value: number) => void;
+}

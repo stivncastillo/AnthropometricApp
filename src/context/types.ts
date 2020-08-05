@@ -13,3 +13,7 @@ export const SET_BOTTOM_SIZE = 'SET_BOTTOM_SIZE';
 export const SET_SHOES_SIZE = 'SET_SHOES_SIZE';
 export const SET_TYPE_BODY = 'SET_TYPE_BODY';
 export const SET_STYLE = 'SET_STYLE';
+export const SET_NEXT_STEP = 'SET_NEXT_STEP';
+export const SET_LAST_STEP = 'SET_LAST_STEP';
+export const SET_TOTAL_STEP = 'SET_TOTAL_STEP';
+export const SET_CURRENT_STEP = 'SET_CURRENT_STEP';
